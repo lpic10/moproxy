@@ -228,7 +228,7 @@ impl NewClient {
             .collect();
         let result = try_connect_all(&dest, list, n_parallel, wait_response, pending_data).await;
         if let Some((server, right)) = result {
-            info!("[:{}] {} => {} via {}", from_port, src, dest, server.tag);
+            info!("[:{}] {} => {} via {}", from_port, src, dest, server);
             Ok(ConnectedClient {
                 left,
                 right,
